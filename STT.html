@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>STT</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+
+  <style>
+    body {
+            font-family: "Open Sans", sans-serif;
+      background-color:#FEF8F5; 
+        
+        }
+
+        h1 {
+            color: #4E4039;
+            text-align: center;
+        }
+
+        #container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #47b2e4;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-right: 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #47b2e4;
+    }
+
+    #result {
+      margin-top: 20px;
+      margin-left: 350px;
+      width: 50%;
+      font-size: 18px;
+      color: #4E4039  ;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      background-color: #F3F2F0;
+      border-radius: 4px ;
+      border-color: #000;
+    }
+
+    .pulse-animation {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Speech to Text</h1>
+
+    <div class="button-container">
+      <button id="startButton">Start Recording</button>
+      <button id="stopButton">Stop Recording</button>
+    </div>
+    
+    <p id="result"></p>
+  </div>
+
+
+  <script>
+    var subscriptionKey = '3dabfda03fb54415a05ff87822e723dc';
+    var tokenEndpoint = 'https://eastasia.api.cognitive.microsoft.com/sts/v1.0/issuetoken';
+    $.ajax({
+      type: 'POST',
+      url: tokenEndpoint,
+      headers: {
+        'Ocp-Apim-Subscription-Key': subscriptionKey
+      },
+      success: function (data) {
+        authorizationToken = data;
+      },
+      error: function (err) {
+        console.error('Error getting authorization token:', err);
+      }
+    });
+
+    var recognizer;
+
+    function startRecognition() {
+      var headers = {
+        'Authorization': 'Bearer ' + authorizationToken,
+        'Content-Type': 'audio/wav; codec=audio/pcm; samplerate=16000'
+      };
+
+      recognizer = new webkitSpeechRecognition();
+      recognizer.continuous = true;
+      recognizer.interimResults = true;
+      recognizer.lang = 'en-US';
+      recognizer.start();
+
+      recognizer.onresult = function (event) {
+        var result = event.results[event.resultIndex];
+        if (result.isFinal) {
+          $('#result').text(result[0].transcript);
+        }
+      };
+
+      recognizer.onerror = function (event) {
+        console.error('Recognition error:', event.error);
+      };
+
+      $('#startButton').addClass('pulse-animation');
+    }
+
+    function stopRecognition() {
+      if (recognizer) {
+        recognizer.stop();
+      }
+
+      $('#startButton').removeClass('pulse-animation');
+    }
+
+    $('#startButton').on('click', startRecognition);
+    $('#stopButton').on('click', stopRecognition);
+  </script>
+  
+</body>
+</html>
