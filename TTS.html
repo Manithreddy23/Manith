@@ -76,9 +76,9 @@
     <script>
         function convertTextToSpeech() {
             var text = document.getElementById('text').value;
-            var subscriptionKey = '3dabfda03fb54415a05ff87822e723dc';
+            var subscriptionKey = '53a3231e62ad4d8388135e3308e4b632';
             
-            var apiUrl = 'https://eastasia.api.cognitive.microsoft.com/sts/v1.0/issuetoken';
+            var apiUrl = 'https://eastus.tts.speech.microsoft.com/cognitiveservices/v1';
             var request = new XMLHttpRequest();
             request.open('POST', apiUrl, true);
             request.setRequestHeader('Ocp-Apim-Subscription-Key', subscriptionKey);
@@ -104,8 +104,8 @@
                 }
             };
 
-            var body = '<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-asia">' +
-                '<voice name="en-asia-AriaNeural">' + text + '</voice></speak>';
+            var body = '<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="en-US">' +
+                '<voice name="en-US-AriaNeural">' + text + '</voice></speak>';
 
             request.send(body);
         }
