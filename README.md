@@ -21,5 +21,5 @@ Azure Services:
 
 Deployment:
 
-1.GitHub: https:
-2zure: https:
+  1.GitHub: https: https://manithreddy23.github.io/Manith/
+  2.Azure: https: https://purple-coast-0f3c27f00.3.azurestaticapps.net/
