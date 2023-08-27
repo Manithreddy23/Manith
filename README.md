@@ -17,9 +17,11 @@ Overall, the purpose and functionality of the "Manith" website align closely wit
 Azure Services:
 
 1.Cognitive Services: Text-to-speech and speech-to-text services
+
 2.Web Services: Static web apps
 
 Deployment:
 
   1.GitHub: https: https://manithreddy23.github.io/Manith/
+  
   2.Azure: https: https://purple-coast-0f3c27f00.3.azurestaticapps.net/
