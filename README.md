@@ -4,8 +4,6 @@ The problem being addressed by the "Manith" is the need for speech services, spe
 
 **Project Description:**
 
-I Used My Name as my project title "Manith"
-
 The "Manith" website addresses the need for speech services, focusing on real-time speech-to-text and text-to-speech conversion. It aims to solve the problem faced by individuals who struggle with typing, require quick transcription services, prefer auditory communication, or have accessibility needs related to speech and language processing. By offering a user-friendly platform, users can leverage the website to convert their spoken words into written text in real-time or input text and have it transformed into spoken words.
 
 The website's core functionality includes real-time speech-to-text conversion and text-to-speech conversion. Users can speak into a microphone or device and instantly see their words transcribed into text. Alternatively, they can input text and have it converted into spoken words. The interface is designed to be intuitive and easy to navigate, providing a seamless user experience.
