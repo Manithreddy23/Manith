@@ -18,7 +18,7 @@ Overall, the purpose and functionality of the "Manith" website align closely wit
 
   1.Cognitive Services      : Text-to-speech and speech-to-text services
   
-  2.Deployment Environments : Static web apps
+  2.Static web apps
 
 **Deployment:**
 
