@@ -1,8 +1,10 @@
-Problem Statement:
+**Problem Statement:**
 
 The problem being addressed by the "Manith" is the need for speech services, specifically real-time speech-to-text and text-to-speech conversion. This can be beneficial for individuals who require assistance in converting spoken words into written text or vice versa. This can benefit individuals who have difficulties with typing, require quick transcription of spoken words, prefer auditory communication, or have other accessibility needs related to speech and language processing. The website aims to enhance communication and accessibility by providing these speech services in a user-friendly and convenient manner.
 
-Project Description:
+**Project Description:**
+
+I Used My Name as my project title "Manith"
 
 The "Manith" website addresses the need for speech services, focusing on real-time speech-to-text and text-to-speech conversion. It aims to solve the problem faced by individuals who struggle with typing, require quick transcription services, prefer auditory communication, or have accessibility needs related to speech and language processing. By offering a user-friendly platform, users can leverage the website to convert their spoken words into written text in real-time or input text and have it transformed into spoken words.
 
@@ -14,13 +16,13 @@ The project utilizes Azure cognitive services, specifically the text-to-speech a
 
 Overall, the purpose and functionality of the "Manith" website align closely with the problem statement and opportunity area of delivering efficient and accurate speech services. It offers a practical solution to enhance communication and accessibility, providing a convenient platform for real-time speech-to-text and text-to-speech conversion.
 
-Azure Services:
+**Azure Services:**
 
-1.Cognitive Services: Text-to-speech and speech-to-text services
+  1.Cognitive Services: Text-to-speech and speech-to-text services
+  
+  2.Web Services: Static web apps
 
-2.Web Services: Static web apps
-
-Deployment:
+**Deployment:**
 
   1.GitHub: https: https://manithreddy23.github.io/Manith/
   
